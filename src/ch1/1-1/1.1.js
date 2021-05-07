@@ -56,4 +56,4 @@ function renderHtml(data) {
     }
 }
 
-console.log(htmlStatement(invoice, plays));
+console.log(statement(invoice, plays));
