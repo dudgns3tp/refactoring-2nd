@@ -7,7 +7,7 @@ class PerformanceCalculator {
     get amount() {
         let result = 0;
         switch (this.play.type) {
-            case 'tragedy': //비극
+            case 'tragedy':
                 result = 40000;
                 if (this.performance.audience > 30) {
                     result += 1000 * (this.performance.audience - 30);
@@ -42,6 +42,10 @@ const createStatementData = function (invoice, plays) {
     result.totalVolumeCredits = totalVolumeCredits(result);
     return result;
 
+    function createPerformanceCalculator(aPerformance, aPlay) {
+        return new PerformanceCalculator(aPerformance, aPlay);
+    }
+
     function totalAmount(data) {
         return data.performances.reduce((total, p) => total + p.amount, 0);
     }
@@ -51,7 +55,7 @@ const createStatementData = function (invoice, plays) {
     }
 
     function enrichPerformance(aPerformance) {
-        const calculator = new PerformanceCalculator(aPerformance, playFor(aPerformance));
+        const calculator = createPerformanceCalculator(aPerformance, playFor(aPerformance));
         const result = Object.assign({}, aPerformance);
         result.play = calculator.play;
         result.amount = calculator.amount;
