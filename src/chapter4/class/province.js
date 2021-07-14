@@ -1,4 +1,5 @@
 //지역 전체를 표현하는 Province 클래스
+const Producer = require('./producer');
 class Province {
     constructor(doc) {
         this._name = doc.name;
@@ -75,3 +76,5 @@ class Province {
         return result;
     }
 }
+
+module.exports = Province;

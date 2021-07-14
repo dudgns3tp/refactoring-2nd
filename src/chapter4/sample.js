@@ -1,7 +1,3 @@
-/**
- *
- */
-
 function sampleProvinceData() {
     return {
         name: 'Asia',
@@ -14,3 +10,7 @@ function sampleProvinceData() {
         price: 20,
     };
 }
+
+module.exports = {
+    sampleProvinceData,
+};
