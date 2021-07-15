@@ -56,7 +56,7 @@ class Province {
     }
 
     get demandValue() {
-        return this.satisfiedDemand - this.demandCost;
+        return this.satisfiedDemand * this.price;
     }
 
     get satisfiedDemand() {
